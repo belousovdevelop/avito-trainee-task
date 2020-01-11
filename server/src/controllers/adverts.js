@@ -65,14 +65,21 @@ class AdsCtrl {
     }
   }
   async addAdvert(req, res) {
+    const { title, description, address, price, images } = req.body
+
+    const ad = new Ad({
+      title,
+      description,
+      address,
+      price,
+      images
+    })
+
     try {
-      const ads = await Ad.find()
-      res.status(200).json({
-        status: "success",
-        data: ads
-      })
+      await ad.save()
+      res.status(201).json({ status: "success", data: ad._id })
     } catch (err) {
-      res.status(404).json({
+      res.status(400).json({
         status: "fail",
         message: err
       })
