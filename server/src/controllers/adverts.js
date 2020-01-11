@@ -38,12 +38,25 @@ class AdsCtrl {
     }
   }
   async specificAdvert(req, res) {
+    const { query } = req
+
+    let fields = {}
+    if (query.fields) {
+      //  each field to true
+      fields = query.fields.split(",").reduce((acc, v) => {
+        acc[v] = true
+        return acc
+      }, {})
+    }
+    const projection = {
+      title: true,
+      price: true,
+      sellerName: true,
+      ...fields
+    }
     try {
-      const ads = await Ad.find()
-      res.status(200).json({
-        status: "success",
-        data: ads
-      })
+      const ad = await Ad.find({ _id: req.params.id }, projection)
+      res.status(200).json({ status: "success", data: ad })
     } catch (err) {
       res.status(404).json({
         status: "fail",
