@@ -1,12 +1,17 @@
 import React from "react"
-import "./App.less"
+import { Route, Redirect } from "react-router-dom"
+import Adverts from "./containers/Adverts"
+import Details from "./containers/Details"
+import NewAdvert from "./containers/NewAdvert"
+import "./app.less"
 
-function App() {
-  return (
-	<div className="App">
-	  App
-	</div>
-  )
-}
+const App = () => (
+  <div className="app">  
+	<Redirect to="/adverts" />
+    <Route exact path="/adverts" component={ Adverts } />
+    <Route exact path="/new" component={ NewAdvert } />
+    <Route path="/adverts/:id" component={ Details } />
+  </div>
+)
 
 export default App
