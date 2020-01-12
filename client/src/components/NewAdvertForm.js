@@ -31,6 +31,14 @@ class NewAdvertFrom extends React.Component {
               placeholder="input placeholder"
             />
           </Form.Item>
+          <Form.Item label="Ссылка на фотографию">
+            <Input
+              name="images"
+              value={this.props.images}
+              onChange={this.props.handleInputChange}
+              placeholder="input placeholder"
+            />
+          </Form.Item>
           <Form.Item label="Цена">
             <InputNumber
               name="price"

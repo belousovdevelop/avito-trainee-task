@@ -8,6 +8,7 @@ class NewAdvert extends Component {
     title: "",
     description: "",
     address: "",
+    images: "",
     price: null
   }
   handleSubmit = event => {
@@ -16,7 +17,8 @@ class NewAdvert extends Component {
       title: this.state.title,
       description: this.state.description,
       address: this.state.address,
-      price: this.state.price
+      price: this.state.price,
+      images: this.state.images
     }
     this.props.addAdvert(newAdvert, () => this.props.history.push("/adverts"))
   }
