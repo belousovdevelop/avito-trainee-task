@@ -1,6 +1,13 @@
-FROM node:13.6.0
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+FROM node:12.2.0-alpine
 
-EXPOSE 3000
+RUN mkdir -p /srv/client
+WORKDIR /srv/client
+
+COPY package.json /srv/client
+COPY package-lock.json /srv/clinet
+
+RUN npm install
+
+COPY . /srv/client
+
 CMD [ "npm", "start" ]
