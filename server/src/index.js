@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 dotenv.config()
 
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 4000
 
 const startAdvertsApp = async () => {
   try {

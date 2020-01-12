@@ -38,8 +38,4 @@ class NewAdvert extends Component {
   }
 }
 
-const mapStateToProps = ({ loading }) => {
-  return { loading }
-}
-
 export default connect(null, { addAdvert })(NewAdvert)
