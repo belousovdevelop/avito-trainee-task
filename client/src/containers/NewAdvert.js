@@ -18,8 +18,7 @@ class NewAdvert extends Component {
       address: this.state.address,
       price: this.state.price
     }
-    this.props.addAdvert(newAdvert)
-    this.props.history.push("/adverts")
+    this.props.addAdvert(newAdvert, () => this.props.history.push("/adverts"))
   }
   handleInputChange = event => {
     this.setState({

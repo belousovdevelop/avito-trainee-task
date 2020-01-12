@@ -10,7 +10,7 @@ import { FETCH_ADVERTS_SUCCESS } from "./types"
 
 const url = "http://localhost:4000"
 
-export const addAdvert = data => {
+export const addAdvert = (data, callback) => {
   return async dispatch => {
     dispatch({ type: ADD_ADVERT_START })
     try {
@@ -20,6 +20,7 @@ export const addAdvert = data => {
         body: JSON.stringify(data)
       })
       const advert = await response.json()
+      await callback()
       dispatch({ type: ADD_ADVERT_SUCCESS, payload: advert })
     } catch (error) {
       dispatch({ type: ADD_ADVERT_ERROR, error })
