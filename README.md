@@ -9,7 +9,7 @@
 Интерфейс веб приложения доступен на [`localhost:3000`](http://localhost:3000/)
 API [`localhost:4000/api/v1/ads`](http://localhost:4000/api/v1/ads/)
 
-Коллекция запросов для тестирования API:
+## Тестирование API:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/09fd870fb7c97fd355e2)
 
