@@ -12,3 +12,7 @@ API [`localhost:4000/api/v1/ads`](http://localhost:4000/api/v1/ads/)
 Коллекция запросов для тестирования API:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/09fd870fb7c97fd355e2)
+
+## Демо-сервер
+
+http://193.164.149.66
